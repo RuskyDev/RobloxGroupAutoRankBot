@@ -1,0 +1,16 @@
+{
+  "name": "rankbot",
+  "version": "1.0.0",
+  "description": "an roblox auto rank bot made for - ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "ruskcop",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "noblox.js": "^4.14.1",
+    "nodemon": "^2.0.22"
+  }
+}
