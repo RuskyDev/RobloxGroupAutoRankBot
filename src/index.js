@@ -9,7 +9,7 @@ const cookie = config.cookie;
 async function startApp() {
   await rbx.setCookie(cookie);
   const currentUser = await rbx.getCurrentUser();
-  console.log("Bot Logged in as " + currentUser.UserName);
+  // console.log("Bot Logged in as " + currentUser.UserName);
 }
 
 app.get("/rank", async (req, res) => {
@@ -17,7 +17,7 @@ app.get("/rank", async (req, res) => {
   const rank = req.query.rank;
 
   try {
-    await startApp(); // Call startApp() here instead
+    await startApp();
     await rbx.setRank(groupId, parseInt(userId), parseInt(rank));
     res.send(`Ranked: ${rank} to ${userId}`);
   } catch (error) {
