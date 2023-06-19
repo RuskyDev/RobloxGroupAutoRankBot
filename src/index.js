@@ -12,13 +12,12 @@ async function startApp() {
   console.log("Bot Logged in as " + currentUser.UserName);
 }
 
-startApp();
-
 app.get("/rank", async (req, res) => {
   const userId = req.query.userid;
   const rank = req.query.rank;
 
   try {
+    await startApp(); // Call startApp() here instead
     await rbx.setRank(groupId, parseInt(userId), parseInt(rank));
     res.send(`Ranked: ${rank} to ${userId}`);
   } catch (error) {
@@ -28,6 +27,6 @@ app.get("/rank", async (req, res) => {
 });
 
 const listener = app.listen(3000, () => {
-  console.log("")
+  console.log("");
   console.log("API Started - Port 3000");
 });
